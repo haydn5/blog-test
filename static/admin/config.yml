@@ -8,17 +8,17 @@ media_folder: "/static/files/"
 public_folder: "/files/"
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
+  - name: "portfolio"
+    label: "Portfolio"
+    folder: "src/pages/portfolio"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "/portfolio/{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {
           label: "Content Type",
           name: "contentType",
           widget: "hidden",
-          default: "blog",
+          default: "portfolio",
         }
       - { label: "Path", name: "path", widget: "string", default: "title" }
       - { label: "Title", name: "title", widget: "string" }
@@ -42,7 +42,7 @@ collections:
                 name: "post",
                 label: "Post",
                 widget: "relation",
-                collection: "blog",
+                collection: "portfolio",
                 searchFields: [name, path, title],
                 valueField: path,
               },
